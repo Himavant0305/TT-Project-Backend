@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: contact-management-api
+  data:
+    mongodb:
+      # Override for Atlas: set MONGODB_URI to your connection string
+      uri: ${MONGODB_URI:mongodb://127.0.0.1:27017/contacts_db}
+      auto-index-creation: true
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    # Min 32 bytes for HS256; override in production via JWT_SECRET
+    secret: ${JWT_SECRET:ChangeThisDevelopmentJwtSecretKey32B}
+    expiration-ms: 86400000
+
+logging:
+  level:
+    org.springframework.security: INFO
