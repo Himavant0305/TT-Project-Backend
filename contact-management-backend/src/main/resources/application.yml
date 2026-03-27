@@ -16,7 +16,8 @@ app:
     secret: ${JWT_SECRET:ChangeThisDevelopmentJwtSecretKey32B}
     expiration-ms: 86400000
   cors:
-    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}
+    # Comma-separated allowed origins or patterns (e.g. https://*.vercel.app)
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,https://*.vercel.app}
 
 logging:
   level:
